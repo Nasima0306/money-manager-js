@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Money Manager</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <div class="container">
+    <h1>💰 Money Manager</h1>
+
+    <!-- Balance -->
+    <div class="balance-card">
+      <h2>Balance: ₹<span id="balance">0</span></h2>
+      <div class="income-expense">
+        <p>Income: ₹<span id="income">0</span></p>
+        <p>Expenses: ₹<span id="expenses">0</span></p>
+      </div>
+    </div>
+
+    <!-- Transaction Form -->
+    <div class="transaction-form">
+      <input type="text" id="name" placeholder="Transaction name"/>
+      <input type="number" id="amount" placeholder="Amount"/>
+
+      <select id="type">
+        <option value="income">💵 Income</option>
+        <option value="expense">💸 Expense</option>
+      </select>
+
+      <select id="category">
+        <option value="home_rent">🏠 Home Rent</option>
+        <option value="electricity">💡 Electricity</option>
+        <option value="water">🚰 Water</option>
+        <option value="maintenance">🛠️ Maintenance</option>
+        <option value="education">🎓 Education</option>
+        <option value="wifi">📶 WiFi</option>
+        <option value="funds">💰 Funds</option>
+        <option value="groceries">🛒 Groceries</option>
+        <option value="toiletries">🧴 Toiletries</option>
+        <option value="skincare">🧖‍♀️ Skincare</option>
+        <option value="haircare">💇‍♀️ Haircare</option>
+        <option value="makeup">💄 Makeup</option>
+        <option value="snacks">🍿 Snacks</option>
+        <option value="drinks">🥤 Drinks</option>
+        <option value="petrol">⛽ Petrol</option>
+        <option value="diesel">🚛 Diesel</option>
+        <option value="savings">💾 Savings</option>
+        <option value="health">🩺 Health</option>
+        <option value="travel">✈️ Travel</option>
+      </select>
+
+      <button id="add-btn">Add Transaction</button>
+    </div>
+
+    <!-- Transactions -->
+    <h3>Transactions</h3>
+    <ul id="transaction-list"></ul>
+
+    <!-- Charts -->
+    <div class="charts-container">
+      <div class="chart-section">
+        <h3>💵 Income vs 💸 Expenses</h3>
+        <canvas id="incomeExpenseChart" width="400" height="250"></canvas>
+      </div>
+
+      <div class="chart-section">
+        <h3>Category-wise Expenses</h3>
+        <canvas id="categoryChart" width="250" height="250"></canvas>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
